@@ -1,0 +1,1827 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+auths:
+  fortigate:
+    community: pccwhkt
+    security_level: noAuthNoPriv
+    auth_protocol: MD5
+    priv_protocol: DES
+    version: 2
+modules:
+  fortigate_dialupvpn:
+    walk:
+    - 1.3.6.1.4.1.12356.101.12.2.1.1.10
+    - 1.3.6.1.4.1.12356.101.12.2.1.1.2
+    - 1.3.6.1.4.1.12356.101.12.2.1.1.3
+    - 1.3.6.1.4.1.12356.101.12.2.1.1.4
+    - 1.3.6.1.4.1.12356.101.12.2.1.1.5
+    - 1.3.6.1.4.1.12356.101.12.2.1.1.6
+    - 1.3.6.1.4.1.12356.101.12.2.1.1.7
+    - 1.3.6.1.4.1.12356.101.12.2.1.1.8
+    - 1.3.6.1.4.1.12356.101.12.2.1.1.9
+    - 1.3.6.1.4.1.12356.101.12.4.1.1.16
+    metrics:
+    - name: fgVpnDialupOutOctets
+      oid: 1.3.6.1.4.1.12356.101.12.2.1.1.10
+      type: counter
+      help: Number of bytes sent on tunnel since instantiation. - 1.3.6.1.4.1.12356.101.12.2.1.1.10
+      indexes:
+      - labelname: fgVpnDialupIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnDialupIndex
+        labelname: fgVpn2DialupPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.4.1.1.16
+        type: DisplayString
+    - name: fgVpnDialupGateway
+      oid: 1.3.6.1.4.1.12356.101.12.2.1.1.2
+      type: InetAddressIPv4
+      help: Remote gateway IP address of the tunnel - 1.3.6.1.4.1.12356.101.12.2.1.1.2
+      indexes:
+      - labelname: fgVpnDialupIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnDialupIndex
+        labelname: fgVpn2DialupPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.4.1.1.16
+        type: DisplayString
+    - name: fgVpnDialupLifetime
+      oid: 1.3.6.1.4.1.12356.101.12.2.1.1.3
+      type: gauge
+      help: Tunnel life time (seconds) of the tunnel - 1.3.6.1.4.1.12356.101.12.2.1.1.3
+      indexes:
+      - labelname: fgVpnDialupIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnDialupIndex
+        labelname: fgVpn2DialupPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.4.1.1.16
+        type: DisplayString
+    - name: fgVpnDialupTimeout
+      oid: 1.3.6.1.4.1.12356.101.12.2.1.1.4
+      type: gauge
+      help: Time before the next key exchange (seconds) of the tunnel - 1.3.6.1.4.1.12356.101.12.2.1.1.4
+      indexes:
+      - labelname: fgVpnDialupIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnDialupIndex
+        labelname: fgVpn2DialupPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.4.1.1.16
+        type: DisplayString
+    - name: fgVpnDialupSrcBegin
+      oid: 1.3.6.1.4.1.12356.101.12.2.1.1.5
+      type: InetAddressIPv4
+      help: Remote subnet address of the tunnel - 1.3.6.1.4.1.12356.101.12.2.1.1.5
+      indexes:
+      - labelname: fgVpnDialupIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnDialupIndex
+        labelname: fgVpn2DialupPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.4.1.1.16
+        type: DisplayString
+    - name: fgVpnDialupSrcEnd
+      oid: 1.3.6.1.4.1.12356.101.12.2.1.1.6
+      type: InetAddressIPv4
+      help: Remote subnet mask of the tunnel - 1.3.6.1.4.1.12356.101.12.2.1.1.6
+      indexes:
+      - labelname: fgVpnDialupIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnDialupIndex
+        labelname: fgVpn2DialupPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.4.1.1.16
+        type: DisplayString
+    - name: fgVpnDialupDstAddr
+      oid: 1.3.6.1.4.1.12356.101.12.2.1.1.7
+      type: InetAddressIPv4
+      help: Local subnet address of the tunnel - 1.3.6.1.4.1.12356.101.12.2.1.1.7
+      indexes:
+      - labelname: fgVpnDialupIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnDialupIndex
+        labelname: fgVpn2DialupPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.4.1.1.16
+        type: DisplayString
+    - name: fgVpnDialupVdom
+      oid: 1.3.6.1.4.1.12356.101.12.2.1.1.8
+      type: gauge
+      help: Virtual domain tunnel is part of - 1.3.6.1.4.1.12356.101.12.2.1.1.8
+      indexes:
+      - labelname: fgVpnDialupIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnDialupIndex
+        labelname: fgVpn2DialupPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.4.1.1.16
+        type: DisplayString
+    - name: fgVpnDialupInOctets
+      oid: 1.3.6.1.4.1.12356.101.12.2.1.1.9
+      type: counter
+      help: Number of bytes received on tunnel since instantiation. - 1.3.6.1.4.1.12356.101.12.2.1.1.9
+      indexes:
+      - labelname: fgVpnDialupIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnDialupIndex
+        labelname: fgVpn2DialupPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.4.1.1.16
+        type: DisplayString
+    max_repetitions: 25
+    retries: 3
+    timeout: 5s
+  fortigate_ha:
+    walk:
+    - 1.3.6.1.4.1.12356.101.13.2.1.1.10
+    - 1.3.6.1.4.1.12356.101.13.2.1.1.11
+    - 1.3.6.1.4.1.12356.101.13.2.1.1.12
+    - 1.3.6.1.4.1.12356.101.13.2.1.1.16
+    - 1.3.6.1.4.1.12356.101.13.2.1.1.2
+    - 1.3.6.1.4.1.12356.101.13.2.1.1.3
+    - 1.3.6.1.4.1.12356.101.13.2.1.1.4
+    - 1.3.6.1.4.1.12356.101.13.2.1.1.5
+    - 1.3.6.1.4.1.12356.101.13.2.1.1.6
+    - 1.3.6.1.4.1.12356.101.13.2.1.1.7
+    - 1.3.6.1.4.1.12356.101.13.2.1.1.8
+    - 1.3.6.1.4.1.12356.101.13.2.1.1.9
+    get:
+    - 1.3.6.1.4.1.12356.101.13.1.1.0
+    - 1.3.6.1.4.1.12356.101.13.1.3.0
+    - 1.3.6.1.4.1.12356.101.13.1.5.0
+    - 1.3.6.1.4.1.12356.101.13.1.6.0
+    - 1.3.6.1.4.1.12356.101.13.1.7.0
+    metrics:
+    - name: fgHaSystemMode
+      oid: 1.3.6.1.4.1.12356.101.13.1.1
+      type: gauge
+      help: High-availability mode (Standalone, A-A or A-P) - 1.3.6.1.4.1.12356.101.13.1.1
+      enum_values:
+        1: standalone
+        2: activeActive
+        3: activePassive
+    - name: fgHaPriority
+      oid: 1.3.6.1.4.1.12356.101.13.1.3
+      type: gauge
+      help: HA clustering priority of the device (default = 127) - 1.3.6.1.4.1.12356.101.13.1.3
+    - name: fgHaAutoSync
+      oid: 1.3.6.1.4.1.12356.101.13.1.5
+      type: gauge
+      help: Configuration of an automatic configuration synchronization (enabled or
+        disabled) - 1.3.6.1.4.1.12356.101.13.1.5
+      enum_values:
+        1: disabled
+        2: enabled
+    - name: fgHaSchedule
+      oid: 1.3.6.1.4.1.12356.101.13.1.6
+      type: gauge
+      help: Load-balancing schedule of cluster (in A-A mode) - 1.3.6.1.4.1.12356.101.13.1.6
+      enum_values:
+        1: none
+        2: hub
+        3: leastConnections
+        4: roundRobin
+        5: weightedRoundRobin
+        6: random
+        7: ipBased
+        8: ipPortBased
+    - name: fgHaGroupName
+      oid: 1.3.6.1.4.1.12356.101.13.1.7
+      type: DisplayString
+      help: HA cluster group name - 1.3.6.1.4.1.12356.101.13.1.7
+    - name: fgHaStatsAvCount
+      oid: 1.3.6.1.4.1.12356.101.13.2.1.1.10
+      type: counter
+      help: Number of anti-virus events triggered on the specified cluster member
+        since start-up - 1.3.6.1.4.1.12356.101.13.2.1.1.10
+      indexes:
+      - labelname: fgHaStatsIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsSerial
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.2
+        type: DisplayString
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsHostname
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.11
+        type: DisplayString
+    - name: fgHaStatsSyncStatus
+      oid: 1.3.6.1.4.1.12356.101.13.2.1.1.12
+      type: gauge
+      help: Current HA Sync status - 1.3.6.1.4.1.12356.101.13.2.1.1.12
+      indexes:
+      - labelname: fgHaStatsIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsSerial
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.2
+        type: DisplayString
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsHostname
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.11
+        type: DisplayString
+      enum_values:
+        0: unsynchronized
+        1: synchronized
+    - name: fgHaStatsPrimarySerial
+      oid: 1.3.6.1.4.1.12356.101.13.2.1.1.16
+      type: DisplayString
+      help: Serial number of primary during the last synch attempt (successful of
+        not) - 1.3.6.1.4.1.12356.101.13.2.1.1.16
+      indexes:
+      - labelname: fgHaStatsIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsSerial
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.2
+        type: DisplayString
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsHostname
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.11
+        type: DisplayString
+    - name: fgHaStatsCpuUsage
+      oid: 1.3.6.1.4.1.12356.101.13.2.1.1.3
+      type: gauge
+      help: CPU usage of the specified cluster member (percentage) - 1.3.6.1.4.1.12356.101.13.2.1.1.3
+      indexes:
+      - labelname: fgHaStatsIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsSerial
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.2
+        type: DisplayString
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsHostname
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.11
+        type: DisplayString
+    - name: fgHaStatsMemUsage
+      oid: 1.3.6.1.4.1.12356.101.13.2.1.1.4
+      type: gauge
+      help: Memory usage of the specified cluster member (percentage) - 1.3.6.1.4.1.12356.101.13.2.1.1.4
+      indexes:
+      - labelname: fgHaStatsIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsSerial
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.2
+        type: DisplayString
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsHostname
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.11
+        type: DisplayString
+    - name: fgHaStatsNetUsage
+      oid: 1.3.6.1.4.1.12356.101.13.2.1.1.5
+      type: gauge
+      help: Network bandwidth usage of specified cluster member (kbps) - 1.3.6.1.4.1.12356.101.13.2.1.1.5
+      indexes:
+      - labelname: fgHaStatsIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsSerial
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.2
+        type: DisplayString
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsHostname
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.11
+        type: DisplayString
+    - name: fgHaStatsSesCount
+      oid: 1.3.6.1.4.1.12356.101.13.2.1.1.6
+      type: gauge
+      help: Current session count of specified cluster member - 1.3.6.1.4.1.12356.101.13.2.1.1.6
+      indexes:
+      - labelname: fgHaStatsIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsSerial
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.2
+        type: DisplayString
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsHostname
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.11
+        type: DisplayString
+    - name: fgHaStatsPktCount
+      oid: 1.3.6.1.4.1.12356.101.13.2.1.1.7
+      type: counter
+      help: Number of packets processed by the specified cluster member since start-up
+        - 1.3.6.1.4.1.12356.101.13.2.1.1.7
+      indexes:
+      - labelname: fgHaStatsIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsSerial
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.2
+        type: DisplayString
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsHostname
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.11
+        type: DisplayString
+    - name: fgHaStatsByteCount
+      oid: 1.3.6.1.4.1.12356.101.13.2.1.1.8
+      type: counter
+      help: Number of bytes processed by the specified cluster member since start-up
+        - 1.3.6.1.4.1.12356.101.13.2.1.1.8
+      indexes:
+      - labelname: fgHaStatsIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsSerial
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.2
+        type: DisplayString
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsHostname
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.11
+        type: DisplayString
+    - name: fgHaStatsIdsCount
+      oid: 1.3.6.1.4.1.12356.101.13.2.1.1.9
+      type: counter
+      help: Number of IDS/IPS events triggered on the specified cluster member since
+        start-up - 1.3.6.1.4.1.12356.101.13.2.1.1.9
+      indexes:
+      - labelname: fgHaStatsIndex
+        type: gauge
+      lookups:
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsSerial
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.2
+        type: DisplayString
+      - labels:
+        - fgHaStatsIndex
+        labelname: fgHaStatsHostname
+        oid: 1.3.6.1.4.1.12356.101.13.2.1.1.11
+        type: DisplayString
+    max_repetitions: 25
+    retries: 3
+    timeout: 5s
+  fortigate_healthcheck:
+    walk:
+    - 1.3.6.1.4.1.12356.101.4.9.2.1.1
+    - 1.3.6.1.4.1.12356.101.4.9.2.1.10
+    - 1.3.6.1.4.1.12356.101.4.9.2.1.11
+    - 1.3.6.1.4.1.12356.101.4.9.2.1.12
+    - 1.3.6.1.4.1.12356.101.4.9.2.1.13
+    - 1.3.6.1.4.1.12356.101.4.9.2.1.14
+    - 1.3.6.1.4.1.12356.101.4.9.2.1.15
+    - 1.3.6.1.4.1.12356.101.4.9.2.1.16
+    - 1.3.6.1.4.1.12356.101.4.9.2.1.2
+    - 1.3.6.1.4.1.12356.101.4.9.2.1.3
+    - 1.3.6.1.4.1.12356.101.4.9.2.1.4
+    - 1.3.6.1.4.1.12356.101.4.9.2.1.5
+    - 1.3.6.1.4.1.12356.101.4.9.2.1.6
+    - 1.3.6.1.4.1.12356.101.4.9.2.1.7
+    - 1.3.6.1.4.1.12356.101.4.9.2.1.8
+    - 1.3.6.1.4.1.12356.101.4.9.2.1.9
+    metrics:
+    - name: fgVWLHealthCheckLinkID
+      oid: 1.3.6.1.4.1.12356.101.4.9.2.1.1
+      type: gauge
+      help: Virtual-wan-link health-check link ID - 1.3.6.1.4.1.12356.101.4.9.2.1.1
+      indexes:
+      - labelname: fgVWLHealthCheckLinkID
+        type: gauge
+      lookups:
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkIfName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.14
+        type: DisplayString
+    - name: fgVWLHealthCheckLinkVdom
+      oid: 1.3.6.1.4.1.12356.101.4.9.2.1.10
+      type: DisplayString
+      help: Virtual domain the link monitor entry exists in - 1.3.6.1.4.1.12356.101.4.9.2.1.10
+      indexes:
+      - labelname: fgVWLHealthCheckLinkID
+        type: gauge
+      lookups:
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkIfName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.14
+        type: DisplayString
+    - name: fgVWLHealthCheckLinkBandwidthIn
+      oid: 1.3.6.1.4.1.12356.101.4.9.2.1.11
+      type: counter
+      help: The available bandwidth in kbps of incoming traffic detected by a health-check
+        on a specific member link. - 1.3.6.1.4.1.12356.101.4.9.2.1.11
+      indexes:
+      - labelname: fgVWLHealthCheckLinkID
+        type: gauge
+      lookups:
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkIfName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.14
+        type: DisplayString
+    - name: fgVWLHealthCheckLinkBandwidthOut
+      oid: 1.3.6.1.4.1.12356.101.4.9.2.1.12
+      type: counter
+      help: The available bandwidth in kbps of outgoing traffic detected by a health-check
+        on a specific member link. - 1.3.6.1.4.1.12356.101.4.9.2.1.12
+      indexes:
+      - labelname: fgVWLHealthCheckLinkID
+        type: gauge
+      lookups:
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkIfName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.14
+        type: DisplayString
+    - name: fgVWLHealthCheckLinkBandwidthBi
+      oid: 1.3.6.1.4.1.12356.101.4.9.2.1.13
+      type: counter
+      help: The available bandwidth in kbps of bi-direction traffic detected by a
+        health-check on a specific member link. - 1.3.6.1.4.1.12356.101.4.9.2.1.13
+      indexes:
+      - labelname: fgVWLHealthCheckLinkID
+        type: gauge
+      lookups:
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkIfName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.14
+        type: DisplayString
+    - name: fgVWLHealthCheckLinkUsedBandwidthIn
+      oid: 1.3.6.1.4.1.12356.101.4.9.2.1.15
+      type: counter
+      help: The used bandwidth in kbps of incoming traffic detected by a health-check
+        on a specific member link. - 1.3.6.1.4.1.12356.101.4.9.2.1.15
+      indexes:
+      - labelname: fgVWLHealthCheckLinkID
+        type: gauge
+      lookups:
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkIfName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.14
+        type: DisplayString
+    - name: fgVWLHealthCheckLinkUsedBandwidthOut
+      oid: 1.3.6.1.4.1.12356.101.4.9.2.1.16
+      type: counter
+      help: The used bandwidth in kbps of outgoing traffic detected by a health-check
+        on a specific member link. - 1.3.6.1.4.1.12356.101.4.9.2.1.16
+      indexes:
+      - labelname: fgVWLHealthCheckLinkID
+        type: gauge
+      lookups:
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkIfName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.14
+        type: DisplayString
+    - name: fgVWLHealthCheckLinkSeq
+      oid: 1.3.6.1.4.1.12356.101.4.9.2.1.3
+      type: gauge
+      help: Virtual-wan-link member link sequence. - 1.3.6.1.4.1.12356.101.4.9.2.1.3
+      indexes:
+      - labelname: fgVWLHealthCheckLinkID
+        type: gauge
+      lookups:
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkIfName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.14
+        type: DisplayString
+    - name: fgVWLHealthCheckLinkState
+      oid: 1.3.6.1.4.1.12356.101.4.9.2.1.4
+      type: gauge
+      help: Heatlth check state on a specific member link. - 1.3.6.1.4.1.12356.101.4.9.2.1.4
+      indexes:
+      - labelname: fgVWLHealthCheckLinkID
+        type: gauge
+      lookups:
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkIfName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.14
+        type: DisplayString
+      enum_values:
+        0: alive
+        1: dead
+    - name: fgVWLHealthCheckLinkLatency
+      oid: 1.3.6.1.4.1.12356.101.4.9.2.1.5
+      type: DisplayString
+      help: The average latency of a health check on a specific member link in float
+        number within last 30 probes. - 1.3.6.1.4.1.12356.101.4.9.2.1.5
+      indexes:
+      - labelname: fgVWLHealthCheckLinkID
+        type: gauge
+      lookups:
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkIfName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.14
+        type: DisplayString
+      regex_extracts:
+        "":
+        - value: $1
+          regex: ^(?:(.*))$
+    - name: fgVWLHealthCheckLinkJitter
+      oid: 1.3.6.1.4.1.12356.101.4.9.2.1.6
+      type: DisplayString
+      help: The average jitter of a health check on a specific member link in float
+        number within last 30 probes. - 1.3.6.1.4.1.12356.101.4.9.2.1.6
+      indexes:
+      - labelname: fgVWLHealthCheckLinkID
+        type: gauge
+      lookups:
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkIfName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.14
+        type: DisplayString
+      regex_extracts:
+        "":
+        - value: $1
+          regex: ^(?:(.*))$
+    - name: fgVWLHealthCheckLinkPacketSend
+      oid: 1.3.6.1.4.1.12356.101.4.9.2.1.7
+      type: counter
+      help: The total number of packets sent by a health check on a specific member
+        link. - 1.3.6.1.4.1.12356.101.4.9.2.1.7
+      indexes:
+      - labelname: fgVWLHealthCheckLinkID
+        type: gauge
+      lookups:
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkIfName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.14
+        type: DisplayString
+    - name: fgVWLHealthCheckLinkPacketRecv
+      oid: 1.3.6.1.4.1.12356.101.4.9.2.1.8
+      type: counter
+      help: The total number of packets received by a health check on a specific member
+        link. - 1.3.6.1.4.1.12356.101.4.9.2.1.8
+      indexes:
+      - labelname: fgVWLHealthCheckLinkID
+        type: gauge
+      lookups:
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkIfName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.14
+        type: DisplayString
+    - name: fgVWLHealthCheckLinkPacketLoss
+      oid: 1.3.6.1.4.1.12356.101.4.9.2.1.9
+      type: DisplayString
+      help: The packet loss percentage of a health check on a specific member link
+        in float number within last 30 probes. - 1.3.6.1.4.1.12356.101.4.9.2.1.9
+      indexes:
+      - labelname: fgVWLHealthCheckLinkID
+        type: gauge
+      lookups:
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVWLHealthCheckLinkID
+        labelname: fgVWLHealthCheckLinkIfName
+        oid: 1.3.6.1.4.1.12356.101.4.9.2.1.14
+        type: DisplayString
+      regex_extracts:
+        "":
+        - value: $1
+          regex: ^(?:(.*))$
+    max_repetitions: 25
+    retries: 3
+    timeout: 5s
+  fortigate_interface:
+    walk:
+    - 1.3.6.1.2.1.2.2.1.13
+    - 1.3.6.1.2.1.2.2.1.14
+    - 1.3.6.1.2.1.2.2.1.19
+    - 1.3.6.1.2.1.2.2.1.20
+    - 1.3.6.1.2.1.2.2.1.4
+    - 1.3.6.1.2.1.2.2.1.7
+    - 1.3.6.1.2.1.2.2.1.8
+    - 1.3.6.1.2.1.31.1.1.1.1
+    - 1.3.6.1.2.1.31.1.1.1.10
+    - 1.3.6.1.2.1.31.1.1.1.11
+    - 1.3.6.1.2.1.31.1.1.1.12
+    - 1.3.6.1.2.1.31.1.1.1.13
+    - 1.3.6.1.2.1.31.1.1.1.15
+    - 1.3.6.1.2.1.31.1.1.1.18
+    - 1.3.6.1.2.1.31.1.1.1.6
+    - 1.3.6.1.2.1.31.1.1.1.7
+    - 1.3.6.1.2.1.31.1.1.1.8
+    - 1.3.6.1.2.1.31.1.1.1.9
+    - 1.3.6.1.2.1.4.20.1.1
+    - 1.3.6.1.4.1.12356.101.7.2.1.1.1
+    metrics:
+    - name: ifInDiscards
+      oid: 1.3.6.1.2.1.2.2.1.13
+      type: counter
+      help: The number of inbound packets which were chosen to be discarded even though
+        no errors had been detected to prevent their being deliverable to a higher-layer
+        protocol - 1.3.6.1.2.1.2.2.1.13
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+    - name: ifInErrors
+      oid: 1.3.6.1.2.1.2.2.1.14
+      type: counter
+      help: For packet-oriented interfaces, the number of inbound packets that contained
+        errors preventing them from being deliverable to a higher-layer protocol -
+        1.3.6.1.2.1.2.2.1.14
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+    - name: ifOutDiscards
+      oid: 1.3.6.1.2.1.2.2.1.19
+      type: counter
+      help: The number of outbound packets which were chosen to be discarded even
+        though no errors had been detected to prevent their being transmitted - 1.3.6.1.2.1.2.2.1.19
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+    - name: ifOutErrors
+      oid: 1.3.6.1.2.1.2.2.1.20
+      type: counter
+      help: For packet-oriented interfaces, the number of outbound packets that could
+        not be transmitted because of errors - 1.3.6.1.2.1.2.2.1.20
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+    - name: ifMtu
+      oid: 1.3.6.1.2.1.2.2.1.4
+      type: gauge
+      help: The size of the largest packet which can be sent/received on the interface,
+        specified in octets - 1.3.6.1.2.1.2.2.1.4
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+    - name: ifAdminStatus
+      oid: 1.3.6.1.2.1.2.2.1.7
+      type: gauge
+      help: The desired state of the interface - 1.3.6.1.2.1.2.2.1.7
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      enum_values:
+        1: up
+        2: down
+        3: testing
+    - name: ifOperStatus
+      oid: 1.3.6.1.2.1.2.2.1.8
+      type: gauge
+      help: The current operational state of the interface - 1.3.6.1.2.1.2.2.1.8
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      enum_values:
+        1: up
+        2: down
+        3: testing
+        4: unknown
+        5: dormant
+        6: notPresent
+        7: lowerLayerDown
+    - name: ifHCOutOctets
+      oid: 1.3.6.1.2.1.31.1.1.1.10
+      type: counter
+      help: The total number of octets transmitted out of the interface, including
+        framing characters - 1.3.6.1.2.1.31.1.1.1.10
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+    - name: ifHCOutUcastPkts
+      oid: 1.3.6.1.2.1.31.1.1.1.11
+      type: counter
+      help: The total number of packets that higher-level protocols requested be transmitted,
+        and which were not addressed to a multicast or broadcast address at this sub-layer,
+        including those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.11
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+    - name: ifHCOutMulticastPkts
+      oid: 1.3.6.1.2.1.31.1.1.1.12
+      type: counter
+      help: The total number of packets that higher-level protocols requested be transmitted,
+        and which were addressed to a multicast address at this sub-layer, including
+        those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.12
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+    - name: ifHCOutBroadcastPkts
+      oid: 1.3.6.1.2.1.31.1.1.1.13
+      type: counter
+      help: The total number of packets that higher-level protocols requested be transmitted,
+        and which were addressed to a broadcast address at this sub-layer, including
+        those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.13
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+    - name: ifHighSpeed
+      oid: 1.3.6.1.2.1.31.1.1.1.15
+      type: gauge
+      help: An estimate of the interface's current bandwidth in units of 1,000,000
+        bits per second - 1.3.6.1.2.1.31.1.1.1.15
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+    - name: ifHCInOctets
+      oid: 1.3.6.1.2.1.31.1.1.1.6
+      type: counter
+      help: The total number of octets received on the interface, including framing
+        characters - 1.3.6.1.2.1.31.1.1.1.6
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+    - name: ifHCInUcastPkts
+      oid: 1.3.6.1.2.1.31.1.1.1.7
+      type: counter
+      help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+        which were not addressed to a multicast or broadcast address at this sub-layer
+        - 1.3.6.1.2.1.31.1.1.1.7
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+    - name: ifHCInMulticastPkts
+      oid: 1.3.6.1.2.1.31.1.1.1.8
+      type: counter
+      help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+        which were addressed to a multicast address at this sub-layer - 1.3.6.1.2.1.31.1.1.1.8
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+    - name: ifHCInBroadcastPkts
+      oid: 1.3.6.1.2.1.31.1.1.1.9
+      type: counter
+      help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+        which were addressed to a broadcast address at this sub-layer - 1.3.6.1.2.1.31.1.1.1.9
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+    - name: ipAdEntAddr
+      oid: 1.3.6.1.2.1.4.20.1.1
+      type: InetAddressIPv4
+      help: The IP address to which this entry's addressing information pertains.
+        - 1.3.6.1.2.1.4.20.1.1
+      indexes:
+      - labelname: ipAdEntAddr
+        type: InetAddressIPv4
+    - name: fgIntfEntVdom
+      oid: 1.3.6.1.4.1.12356.101.7.2.1.1.1
+      type: gauge
+      help: The virtual domain the interface belongs to - 1.3.6.1.4.1.12356.101.7.2.1.1.1
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+    max_repetitions: 25
+    retries: 3
+    timeout: 5s
+    filters:
+    - oid: 1.3.6.1.2.1.2.2.1.7
+      targets:
+      - 1.3.6.1.2.1.2.2.1.7
+      - 1.3.6.1.2.1.2.2.1.8
+      - 1.3.6.1.2.1.31.1.1.1.15
+      - 1.3.6.1.2.1.2.2.1.4
+      - 1.3.6.1.2.1.31.1.1.1.6
+      - 1.3.6.1.2.1.31.1.1.1.10
+      - 1.3.6.1.2.1.2.2.1.13
+      - 1.3.6.1.2.1.2.2.1.19
+      - 1.3.6.1.2.1.2.2.1.14
+      - 1.3.6.1.2.1.2.2.1.20
+      - 1.3.6.1.2.1.31.1.1.1.7
+      - 1.3.6.1.2.1.31.1.1.1.8
+      - 1.3.6.1.2.1.31.1.1.1.9
+      - 1.3.6.1.2.1.31.1.1.1.11
+      - 1.3.6.1.2.1.31.1.1.1.12
+      - 1.3.6.1.2.1.31.1.1.1.13
+      values:
+      - "1"
+  fortigate_ipsec:
+    walk:
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.10
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.11
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.12
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.13
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.14
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.15
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.16
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.17
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.18
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.19
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.2
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.20
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.21
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.3
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.4
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.6
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.8
+    - 1.3.6.1.4.1.12356.101.12.2.2.1.9
+    - 1.3.6.1.4.1.12356.101.3.2.1.1.2
+    metrics:
+    - name: fgVpnTunEntSelectorSrcPort
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.10
+      type: gauge
+      help: Source selector port - 1.3.6.1.4.1.12356.101.12.2.2.1.10
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVpnTunEntSelectorDstBeginIp
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.11
+      type: InetAddressIPv4
+      help: Beginning of address range of destination selector - 1.3.6.1.4.1.12356.101.12.2.2.1.11
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVpnTunEntSelectorDstEndIp
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.12
+      type: InetAddressIPv4
+      help: End of address range of destination selector - 1.3.6.1.4.1.12356.101.12.2.2.1.12
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVpnTunEntSelectorDstPort
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.13
+      type: gauge
+      help: Destination selector port - 1.3.6.1.4.1.12356.101.12.2.2.1.13
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVpnTunEntSelectorProto
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.14
+      type: gauge
+      help: Protocol number for selector - 1.3.6.1.4.1.12356.101.12.2.2.1.14
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVpnTunEntLifeSecs
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.15
+      type: gauge
+      help: Lifetime of tunnel in seconds, if time based lifetime used - 1.3.6.1.4.1.12356.101.12.2.2.1.15
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVpnTunEntLifeBytes
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.16
+      type: gauge
+      help: Lifetime of tunnel in bytes, if byte transfer based lifetime used - 1.3.6.1.4.1.12356.101.12.2.2.1.16
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVpnTunEntTimeout
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.17
+      type: gauge
+      help: Timeout of tunnel in seconds - 1.3.6.1.4.1.12356.101.12.2.2.1.17
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVpnTunEntInOctets
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.18
+      type: counter
+      help: Number of bytes received on tunnel - 1.3.6.1.4.1.12356.101.12.2.2.1.18
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVpnTunEntOutOctets
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.19
+      type: counter
+      help: Number of bytes sent out on tunnel - 1.3.6.1.4.1.12356.101.12.2.2.1.19
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVpnTunEntPhase1Name
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+      type: DisplayString
+      help: Descriptive name of phase1 configuration for the tunnel - 1.3.6.1.4.1.12356.101.12.2.2.1.2
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVpnTunEntStatus
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.20
+      type: gauge
+      help: Current status of tunnel (up or down) - 1.3.6.1.4.1.12356.101.12.2.2.1.20
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+      enum_values:
+        1: down
+        2: up
+    - name: fgVpnTunEntVdom
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+      type: gauge
+      help: Virtual domain the tunnel is part of - 1.3.6.1.4.1.12356.101.12.2.2.1.21
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVpnTunEntPhase2Name
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+      type: DisplayString
+      help: Descriptive name of phase2 configuration for the tunnel - 1.3.6.1.4.1.12356.101.12.2.2.1.3
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVpnTunEntRemGwyIp
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.4
+      type: InetAddressIPv4
+      help: IP of remote gateway used by the tunnel - 1.3.6.1.4.1.12356.101.12.2.2.1.4
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVpnTunEntLocGwyIp
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.6
+      type: InetAddressIPv4
+      help: IP of local gateway used by the tunnel - 1.3.6.1.4.1.12356.101.12.2.2.1.6
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVpnTunEntSelectorSrcBeginIp
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.8
+      type: InetAddressIPv4
+      help: Beginning of address range of source selector - 1.3.6.1.4.1.12356.101.12.2.2.1.8
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVpnTunEntSelectorSrcEndIp
+      oid: 1.3.6.1.4.1.12356.101.12.2.2.1.9
+      type: InetAddressIPv4
+      help: End of address range of source selector - 1.3.6.1.4.1.12356.101.12.2.2.1.9
+      indexes:
+      - labelname: fgVpnTunEntIndex
+        type: gauge
+      - labelname: fgVpnTunEntPhase2Index
+        type: gauge
+      - labelname: fgVpnTunEntVdom
+        type: gauge
+      lookups:
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase1Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.2
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntPhase2Name
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.3
+        type: DisplayString
+      - labels:
+        - fgVpnTunEntIndex
+        - fgVpnTunEntPhase2Index
+        labelname: fgVpnTunEntVdom
+        oid: 1.3.6.1.4.1.12356.101.12.2.2.1.21
+        type: gauge
+      - labels:
+        - fgVpnTunEntVdom
+        labelname: fgVdEntName
+        oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+        type: DisplayString
+    - name: fgVdEntName
+      oid: 1.3.6.1.4.1.12356.101.3.2.1.1.2
+      type: DisplayString
+      help: The name of the virtual domain - 1.3.6.1.4.1.12356.101.3.2.1.1.2
+      indexes:
+      - labelname: fgVdEntIndex
+        type: gauge
+    max_repetitions: 25
+    retries: 3
+    timeout: 5s
+  fortigate_system:
+    get:
+    - 1.3.6.1.2.1.1.5.0
+    - 1.3.6.1.2.1.4.4.0
+    - 1.3.6.1.4.1.12356.100.1.1.1.0
+    - 1.3.6.1.4.1.12356.101.4.1.1.0
+    - 1.3.6.1.4.1.12356.101.4.1.11.0
+    - 1.3.6.1.4.1.12356.101.4.1.12.0
+    - 1.3.6.1.4.1.12356.101.4.1.13.0
+    - 1.3.6.1.4.1.12356.101.4.1.14.0
+    - 1.3.6.1.4.1.12356.101.4.1.20.0
+    - 1.3.6.1.4.1.12356.101.4.1.3.0
+    - 1.3.6.1.4.1.12356.101.4.1.4.0
+    - 1.3.6.1.4.1.12356.101.4.1.6.0
+    - 1.3.6.1.4.1.12356.101.4.1.7.0
+    - 1.3.6.1.4.1.12356.101.4.1.8.0
+    metrics:
+    - name: sysName
+      oid: 1.3.6.1.2.1.1.5
+      type: DisplayString
+      help: An administratively-assigned name for this managed node - 1.3.6.1.2.1.1.5
+    - name: ipInHdrErrors
+      oid: 1.3.6.1.2.1.4.4
+      type: counter
+      help: The number of input datagrams discarded due to errors in their IP headers,
+        including bad checksums, version number mismatch, other format errors, time-to-live
+        exceeded, errors discovered in processing their IP options, etc. - 1.3.6.1.2.1.4.4
+    - name: fnSysSerial
+      oid: 1.3.6.1.4.1.12356.100.1.1.1
+      type: DisplayString
+      help: Device serial number - 1.3.6.1.4.1.12356.100.1.1.1
+    - name: fgSysVersion
+      oid: 1.3.6.1.4.1.12356.101.4.1.1
+      type: DisplayString
+      help: Firmware version of the device - 1.3.6.1.4.1.12356.101.4.1.1
+    - name: fgSysSesRate1
+      oid: 1.3.6.1.4.1.12356.101.4.1.11
+      type: gauge
+      help: The average session setup rate over the past minute. - 1.3.6.1.4.1.12356.101.4.1.11
+    - name: fgSysSesRate10
+      oid: 1.3.6.1.4.1.12356.101.4.1.12
+      type: gauge
+      help: The average session setup rate over the past 10 minutes. - 1.3.6.1.4.1.12356.101.4.1.12
+    - name: fgSysSesRate30
+      oid: 1.3.6.1.4.1.12356.101.4.1.13
+      type: gauge
+      help: The average session setup rate over the past 30 minutes. - 1.3.6.1.4.1.12356.101.4.1.13
+    - name: fgSysSesRate60
+      oid: 1.3.6.1.4.1.12356.101.4.1.14
+      type: gauge
+      help: The average session setup rate over the past 60 minutes. - 1.3.6.1.4.1.12356.101.4.1.14
+    - name: fgSysUpTime
+      oid: 1.3.6.1.4.1.12356.101.4.1.20
+      type: counter
+      help: The 64bit time (in hundredths of a second) since the network management
+        portion of the system was last re-initialized. - 1.3.6.1.4.1.12356.101.4.1.20
+    - name: fgSysCpuUsage
+      oid: 1.3.6.1.4.1.12356.101.4.1.3
+      type: gauge
+      help: Current CPU usage (percentage) - 1.3.6.1.4.1.12356.101.4.1.3
+    - name: fgSysMemUsage
+      oid: 1.3.6.1.4.1.12356.101.4.1.4
+      type: gauge
+      help: Current memory utilization (percentage) - 1.3.6.1.4.1.12356.101.4.1.4
+    - name: fgSysDiskUsage
+      oid: 1.3.6.1.4.1.12356.101.4.1.6
+      type: gauge
+      help: Current hard disk usage (MB), if disk is present - 1.3.6.1.4.1.12356.101.4.1.6
+    - name: fgSysDiskCapacity
+      oid: 1.3.6.1.4.1.12356.101.4.1.7
+      type: gauge
+      help: Total hard disk capacity (MB), if disk is present - 1.3.6.1.4.1.12356.101.4.1.7
+    - name: fgSysSesCount
+      oid: 1.3.6.1.4.1.12356.101.4.1.8
+      type: gauge
+      help: Number of active sessions on the device - 1.3.6.1.4.1.12356.101.4.1.8
+    max_repetitions: 25
+    retries: 3
+    timeout: 5s

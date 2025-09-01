@@ -1,0 +1,13 @@
+- labels:
+    module: fortigate_interface,fortigate_system,fortigate_ipsec,fortigate_healthcheck
+    auth: fortigate
+    gwname: GZU1-FTGW01A
+  targets:
+    - 113.113.124.193
+
+- labels:
+    module: fortigate_interface,fortigate_system,fortigate_ipsec,fortigate_healthcheck
+    auth: fortigate
+    gwname: SHI1-FTGW01A
+  targets:
+    - 124.28.226.113

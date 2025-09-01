@@ -1,0 +1,55 @@
+groups:
+    - name: Fortigate CPU usage detection
+      rules:
+      - alert: Fortigate CPU usage detection
+        expr: fgSysCpuUsage > 90
+        for: 30s
+        labels:
+          device: fortigate
+        annotations:
+          summary: "{{$labels.gwname}} {{$labels.instance}} CPU usage detected above 90%,current value is: {{ $value }}%"
+          description: "{{$labels.gwname}} {{$labels.instance}} CPU usage detected under 90%"
+
+    - name: Fortigate Memory usage detection
+      rules:
+      - alert: Fortigate Memory usage detection
+        expr: fgSysMemUsage > 85
+        for: 30s
+        labels:
+          device: fortigate
+        annotations:
+          summary: "{{$labels.gwname}} {{$labels.instance}} Memory usage detected above 85%,current value is: {{ $value }}"
+          description: "{{$labels.gwname}} {{$labels.instance}} Memory usage detected under 85%"
+
+    - name: Fortigate online detection
+      rules:
+      - alert: Fortigate online detection
+        expr: up{job="fortigate"} < 1
+        for: 30s
+        labels:
+          device: fortigate
+        annotations:
+          summary: "{{$labels.gwname}} {{$labels.instance}} offline"
+          description: "{{$labels.gwname}} {{$labels.instance}} online"
+
+    - name: Fortigate disk usage detection
+      rules:
+      - alert: Fortigate disk usage detection
+        expr: (fgSysDiskUsage / clamp_min(fgSysDiskCapacity, 1)) * 100 > 85
+        for: 30s
+        labels:
+          device: fortigate
+        annotations: 
+          summary: "{{$labels.gwname}} {{$labels.instance}} disk usage above 85% current value is: {{ $value }}%"
+          description: "{{$labels.gwname}} {{$labels.instance}} disk usage under 85%"
+
+    - name: Fortigate internal1 interface detection
+      rules:
+      - alert: Fortigate internal1 interface detection
+        expr: ifOperStatus{ifName="internal1"} == 2
+        for: 30s
+        labels:
+          device: fortigate
+        annotations: 
+          summary: "{{$labels.gwname}} {{$labels.instance}} internal1 DOWN"
+          description: "{{$labels.gwname}} {{$labels.instance}} internal1 UP"
