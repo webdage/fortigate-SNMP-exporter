@@ -1,7 +1,7 @@
 # WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
 auths:
   fortigate:
-    community: pccwhkt
+    community: 123456
     security_level: noAuthNoPriv
     auth_protocol: MD5
     priv_protocol: DES
